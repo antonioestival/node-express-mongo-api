@@ -5,7 +5,7 @@ import mongooseStringQuery from 'mongoose-string-query';
 
 import logger from '../utils/logger';
 import email from '../utils/email';
-import events from '../utils/events';
+// import events from '../utils/events';
 
 export const UserSchema = new Schema(
 	{

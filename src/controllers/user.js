@@ -2,7 +2,7 @@ import async from 'async';
 import validator from 'validator';
 
 import User from '../models/user';
-import Follow from '../models/follow';
+// import Follow from '../models/follow';
 
 import logger from '../utils/logger';
 

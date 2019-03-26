@@ -5,7 +5,7 @@ import logger from '../logger';
 
 mongoose.Promise = global.Promise;
 
-const connection = mongoose.connect(config.database.uri);
+const connection = mongoose.connect(config.database.uri, { useNewUrlParser: true} );
 
 connection
 	.then(db => {

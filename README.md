@@ -1,1 +1,25 @@
-Official blog post can be found at https://medium.com/@nparsons08/building-a-node-js-powered-api-with-express-mongoose-mongodb-19b14fd4b51e.
+# Objetivo
+
+Projeto exemplo para iniciar projetos de API, com NodeJS, Express, MongoDB e JWT
+
+## Up & Runnig
+
+Ambiente de Dev utilizando vagrant
+
+### Pré Requisitos
+Vagrant
+Virtual Box
+
+### Vagrant
+vagrant up
+vagrant ssh
+cd /vagrant
+
+### Build de Produção
+yarn build
+yarn start
+
+# Projeto Base
+https://github.com/GetStream/node-express-mongo-api
+
+

@@ -3,8 +3,8 @@ require('dotenv').config({ path: './.env' });
 export default {
 	env: process.env.NODE_ENV || 'development',
 	logger: {
-		host: process.env.LOGGER_HOST, // Papertrail Logging Host
-		port: process.env.LOGGER_PORT, // Papertrail Logging Port
+		host: process.env.LOGGER_HOST || 'localhost', // Papertrail Logging Host
+		port: process.env.LOGGER_PORT	|| '514', // Papertrail Logging Port
 	},
 	email: {
 		sender: {
@@ -26,4 +26,14 @@ export default {
 		apiKey: process.env.STREAM_API_KEY, // Stream Credentials – https://getstream.io
 		apiSecret: process.env.STREAM_API_SECRET, // Stream Credentials – https://getstream.io
 	},
+	jwt: {
+		secret: process.env.JWT_SECRET || 'murilosecret',
+	},
+	server: {
+		port: process.env.SERVER_PORT || 3000,
+		host: process.env.SERVER_HOST || '127.0.0.1',
+	},
+	database: {
+		uri: process.env.DATABASE_URI || 'mongodb://localhost:27017/astronauta',
+	}
 };
