@@ -7,7 +7,7 @@ Projeto exemplo para iniciar projetos de API, com NodeJS, Express, MongoDB e JWT
 Ambiente de Dev utilizando vagrant
 
 ### Pré Requisitos
-Vagrant
+(Vagrant)[https://www.vagrantup.com/docs/installation/]
 Virtual Box
 
 ### Vagrant
