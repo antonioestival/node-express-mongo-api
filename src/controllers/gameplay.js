@@ -25,7 +25,7 @@ exports.list = (req, res) => {
 };
 
 exports.get = (req, res) => {
-	User.findById(req.params.gameplayId)
+	GamePlay.findById(req.params.gameplayId)
 		.then(gameplay => {
 			res.json(gameplay);
 		})
@@ -37,20 +37,6 @@ exports.get = (req, res) => {
 
 exports.put = (req, res) => {
 	const data = req.body || {};
-
-	logger.info("data:"+ data.toString());
-
-	if (!data.game || !data.username) {
-		return res.status(422).send('Game e username são obrigatórios.');
-	}
-
-	if (data.username && !validator.isAlphanumeric(data.username)) {
-		return res.status(422).send('Usernames must be alphanumeric.');
-	}
-
-	if (data.game && !validator.isAlphanumeric(data.game)) {
-		return res.status(422).send('Usernames must be alphanumeric.');
-	}
 
 	GamePlay.findByIdAndUpdate({ _id: req.params.gameplayId }, data, { new: true })
 		.then(gameplay => {
@@ -67,15 +53,12 @@ exports.put = (req, res) => {
 };
 
 exports.post = (req, res) => {
-	const data = Object.assign({}, req.body, { user: req.user.sub }) || {};
-
-	// if (!data.start){
-	// 	data.start = Date.now.toString
-	// }
+	// const data = Object.assign({}, req.body, { user: req.user.sub }) || {};
+	const data = Object.assign({}, req.body) || {};
 
 	GamePlay.create(data)
 		.then(gameplay => {
-			res.json(gameplay);
+			res.status(200).send(gameplay._id.toString());
 		})
 		.catch(err => {
 			logger.error(err);

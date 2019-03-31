@@ -14,22 +14,24 @@ import logger from './utils/logger';
 
 const api = express();
 
+api.use(express.static('../public_html'));
+
 api.use(cors());
 api.use(compression());
 api.use(bodyParser.urlencoded({ extended: true }));
 api.use(bodyParser.json());
 
-api.use(
-	jwt({ secret: config.jwt.secret }).unless({
-		path: [
-			'/',
-			'/auth/signup',
-			'/auth/login',
-			'/auth/forgot-password',
-			'/auth/reset-password'
-		]
-	})
-);
+// api.use(
+// 	jwt({ secret: config.jwt.secret }).unless({
+// 		path: [
+// 			'/',
+// 			'/auth/signup',
+// 			'/auth/login',
+// 			'/auth/forgot-password',
+// 			'/auth/reset-password'
+// 		]
+// 	})
+// );
 
 api.use((err, req, res, next) => {
 	if (err.name === 'UnauthorizedError') {

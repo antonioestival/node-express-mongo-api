@@ -20,20 +20,15 @@ export const GamePlaySchema = new Schema(
 			index: true,
 			required: true
 		},
-    start: {
-      type: Date,
-			required: true,
-			default: Date.now
-    },
-    end: {
-      type: Date,
-      required: false
-		},
 		xp: {
 			type: Number,
 			required: false
 		},
 		coins: {
+			type: Number,
+			required: false
+		},
+		keys: {
 			type: Number,
 			required: false
 		}
