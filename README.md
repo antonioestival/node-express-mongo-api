@@ -11,13 +11,18 @@ Ambiente de Dev utilizando vagrant
 Virtual Box
 
 ### Vagrant
+Tem que subir o vagrant com permissão de adminsitrador
+'''
 vagrant up
 vagrant ssh
 cd /vagrant
+'''
 
 ### Build de Produção
+'''
 yarn build
 yarn start
+'''
 
 # Projeto Base
 https://github.com/GetStream/node-express-mongo-api

@@ -6,6 +6,31 @@ import GamePlay from '../models/gameplay';
 
 import logger from '../utils/logger';
 
+exports.ranking = (req, res) => {
+	const params = req.params || {};
+	const query = req.query || {};
+
+	const gameplayId = req.params.gameplayId
+	if (!gameplayId) {
+		return res.status(422).send('Invalid Gameplay ID.');
+	}	
+
+	GamePlay.aggregate(
+		[
+			{ $group: { "_id": { username: "$username"}, coins: { $max: "$coins" }}},
+			{ $sort: { coins : -1, username : 1 }}
+		], 
+		function (err, result) {
+			if (err) {
+					console.log(err);
+					res.status(422).send(err.errors);
+			}
+			console.log(result);
+			res.json(result);
+		}
+	)
+};
+
 exports.list = (req, res) => {
 	const params = req.params || {};
 	const query = req.query || {};

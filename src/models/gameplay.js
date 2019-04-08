@@ -13,13 +13,6 @@ export const GamePlaySchema = new Schema(
 			index: true,
 			required: true
     },
-		game: {
-			type: String,
-			lowercase: true,
-			trim: true,
-			index: true,
-			required: true
-		},
 		xp: {
 			type: Number,
 			required: false
