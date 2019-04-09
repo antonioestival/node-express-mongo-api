@@ -1,0 +1,21 @@
+{
+  "name": "Template API Node Express com Mongo DB",
+  "description": "Starter Project for Node Express and Mongo DB",
+  "keywords": [
+    "Node",
+    "MongoDB",
+    "mLab",
+    "Express"
+  ],
+  "repository": "https://github.com/antonioestival/node-express-mongo-api",
+  "success_url": "/",
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": [
+    "mongolab"
+  ]
+}

@@ -24,6 +24,14 @@ yarn build
 yarn start
 '''
 
+## Deploy on Heroku
+
+Alternatively, you can deploy your own copy of the app using the web-based flow:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/antonioestival/node-express-mongo-api)
+
+
+
 # Projeto Base
 https://github.com/GetStream/node-express-mongo-api
 
