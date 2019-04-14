@@ -13,9 +13,16 @@ if (config.env == 'test' || config.env == 'local' || config.env == 'development'
 		port: config.logger.port,
 	});
 
-	logger = new winston.Logger({
-		transports: [papertrailTransport],
+	// logger = new winston.Logger({
+	// 	transports: [papertrailTransport],
+	// });
+
+	// your centralized logger object
+	logger = winston.createLogger({
+		transports:[papertrailTransport],
+		exitOnError: false, // do not exit on handled exceptions
 	});
+
 }
 
 export default logger;
